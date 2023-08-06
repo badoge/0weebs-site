@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <title>Commands | 0weebs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="A list of chat commands that can be used for 0weebs" />
+    <meta name="keywords" content="twitch, chat, bot, 0weebs" />
+    <meta property="og:title" content="Commands | 0weebs" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://zero.chat.vote/commands" />
+    <meta property="og:image" content="https://zero.chat.vote/pics/nam.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:description" content="A list of chat commands that can be used for 0weebs" />
+
+    <link rel="apple-touch-icon" sizes="152x152" href="/pics/icon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/pics/icon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/pics/icon/favicon-16x16.png" />
+    <link rel="manifest" href="/pics/icon/site.webmanifest" />
+    <link rel="mask-icon" href="/pics/icon/safari-pinned-tab.svg" color="#ffc40d" />
+    <link rel="shortcut icon" href="/pics/icon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#ff62bd" />
+    <meta name="msapplication-config" content="/pics/icon/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/datatables.min.css" />
+    <link rel="stylesheet" href="/css/icons.css" />
+    <link rel="stylesheet" href="/css/0weebs.min.css" />
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-2">
+      <div class="container-fluid">
+        <a class="navbar-brand notranslate" href="#"><img src="/pics/nam.png" alt="nam" style="height: 30px; width: 30px" class="d-inline-block align-top" />0weebs</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/"><i class="material-icons notranslate">info</i>About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/commands.html"><i class="material-icons notranslate">smart_toy</i>Commands</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/api/" target="_blank" rel="noopener noreferrer"><i class="material-icons notranslate">api</i>API</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/settings.html"><i class="material-icons notranslate">settings</i>Settings</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-2"></div>
+
+        <div class="col-xl-8">
+          <h6 class="display-6 mt-3">General commands:</h6>
+          <div id="table1div">
+            <table id="table1" class="table table-dark table-bordered" style="width: 100%">
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <br />
+          <h6 class="display-6">Broadcaster commands:</h6>
+          <div id="table2div">
+            <table id="table2" class="table table-dark table-bordered" style="width: 100%">
+              <thead>
+                <tr>
+                  <th>Command</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+
+        <div class="col-xl-2"></div>
+      </div>
+    </div>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/datatables.min.js"></script>
+    <script>
+      window.onload = async function () {
+        let table1 = $("#table1").DataTable({
+          autoWidth: false,
+          responsive: true,
+          retrieve: true,
+          paging: false,
+          scrollCollapse: true,
+          searching: false,
+          info: false,
+          columns: [
+            {
+              width: "20%",
+            },
+            {
+              width: "80%",
+            },
+          ],
+          language: {
+            emptyTable: 'ladink... <img src="/pics/okayeg.png" alt="okayeg" style="height:2em;"> ',
+          },
+        });
+
+        let table2 = $("#table2").DataTable({
+          autoWidth: false,
+          responsive: true,
+          retrieve: true,
+          paging: false,
+          scrollCollapse: true,
+          searching: false,
+          info: false,
+          columns: [
+            {
+              width: "20%",
+            },
+            {
+              width: "80%",
+            },
+          ],
+          language: {
+            emptyTable: 'ladink... <img src="/pics/okayeg.png" alt="okayeg" style="height:2em;"> ',
+          },
+        });
+
+        let requestOptions = {
+          method: "GET",
+          redirect: "follow",
+        };
+        try {
+          let response = await fetch(`https://zeroapi.chat.vote/commands`, requestOptions);
+          let commands = await response.json();
+          for (let i = 0; i < commands.length; i++) {
+            let aliases = commands[i].aliases.map((el) => "==" + el).join(", ");
+            let desc = `${commands[i].desc} ${commands[i].whisperable == 1 ? "<br>Whisperable." : ""}`;
+            let name = `==${commands[i]._id}${aliases ? "<br><small class='text-body-secondary'>Alias: " + aliases + "</small>" : ""}`;
+            pushTable(name, desc, commands[i].cat);
+          }
+        } catch (error) {
+          console.log(error);
+        }
+
+        function pushTable(cmd, desc, cat) {
+          switch (cat) {
+            case 1:
+              table1.row.add([cmd, desc]).draw(false);
+              break;
+            case 2:
+              table2.row.add([cmd, desc]).draw(false);
+              break;
+          }
+        }
+      };
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H43YN7FSSP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-H43YN7FSSP");
+    </script>
+  </body>
+</html>

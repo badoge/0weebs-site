@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: https://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+    <title>API Reference | 0weebs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="0weebs twitch chat bot" />
+    <meta name="keywords" content="twitch, chat, bot, 0weebs" />
+    <meta property="og:title" content="API Reference | 0weebs" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://zero.chat.vote/" />
+    <meta property="og:image" content="https://zero.chat.vote/pics/nam.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:description" content="0weebs twitch chat bot" />
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible" />
+
+    <link href="images/favicon-0aebe8a8.ico" rel="icon" type="image/ico" />
+    <style media="screen">
+      .highlight table td {
+        padding: 5px;
+      }
+
+      .highlight table pre {
+        margin: 0;
+      }
+
+      .highlight .gh {
+        color: #999999;
+      }
+
+      .highlight .sr {
+        color: #f6aa11;
+      }
+
+      .highlight .go {
+        color: #888888;
+      }
+
+      .highlight .gp {
+        color: #555555;
+      }
+
+      .highlight .gs {
+      }
+
+      .highlight .gu {
+        color: #aaaaaa;
+      }
+
+      .highlight .nb {
+        color: #f6aa11;
+      }
+
+      .highlight .cm {
+        color: #75715e;
+      }
+
+      .highlight .cp {
+        color: #75715e;
+      }
+
+      .highlight .c1 {
+        color: #75715e;
+      }
+
+      .highlight .cs {
+        color: #75715e;
+      }
+
+      .highlight .c,
+      .highlight .ch,
+      .highlight .cd,
+      .highlight .cpf {
+        color: #75715e;
+      }
+
+      .highlight .err {
+        color: #960050;
+      }
+
+      .highlight .gr {
+        color: #960050;
+      }
+
+      .highlight .gt {
+        color: #960050;
+      }
+
+      .highlight .gd {
+        color: #49483e;
+      }
+
+      .highlight .gi {
+        color: #49483e;
+      }
+
+      .highlight .ge {
+        color: #49483e;
+      }
+
+      .highlight .kc {
+        color: #66d9ef;
+      }
+
+      .highlight .kd {
+        color: #66d9ef;
+      }
+
+      .highlight .kr {
+        color: #66d9ef;
+      }
+
+      .highlight .no {
+        color: #66d9ef;
+      }
+
+      .highlight .kt {
+        color: #66d9ef;
+      }
+
+      .highlight .mf {
+        color: #ae81ff;
+      }
+
+      .highlight .mh {
+        color: #ae81ff;
+      }
+
+      .highlight .il {
+        color: #ae81ff;
+      }
+
+      .highlight .mi {
+        color: #ae81ff;
+      }
+
+      .highlight .mo {
+        color: #ae81ff;
+      }
+
+      .highlight .m,
+      .highlight .mb,
+      .highlight .mx {
+        color: #ae81ff;
+      }
+
+      .highlight .sc {
+        color: #ae81ff;
+      }
+
+      .highlight .se {
+        color: #ae81ff;
+      }
+
+      .highlight .ss {
+        color: #ae81ff;
+      }
+
+      .highlight .sd {
+        color: #e6db74;
+      }
+
+      .highlight .s2 {
+        color: #e6db74;
+      }
+
+      .highlight .sb {
+        color: #e6db74;
+      }
+
+      .highlight .sh {
+        color: #e6db74;
+      }
+
+      .highlight .si {
+        color: #e6db74;
+      }
+
+      .highlight .sx {
+        color: #e6db74;
+      }
+
+      .highlight .s1 {
+        color: #e6db74;
+      }
+
+      .highlight .s,
+      .highlight .sa,
+      .highlight .dl {
+        color: #e6db74;
+      }
+
+      .highlight .na {
+        color: #a6e22e;
+      }
+
+      .highlight .nc {
+        color: #a6e22e;
+      }
+
+      .highlight .nd {
+        color: #a6e22e;
+      }
+
+      .highlight .ne {
+        color: #a6e22e;
+      }
+
+      .highlight .nf,
+      .highlight .fm {
+        color: #a6e22e;
+      }
+
+      .highlight .vc {
+        color: #ffffff;
+      }
+
+      .highlight .nn {
+        color: #ffffff;
+      }
+
+      .highlight .ni {
+        color: #ffffff;
+      }
+
+      .highlight .bp {
+        color: #ffffff;
+      }
+
+      .highlight .vg {
+        color: #ffffff;
+      }
+
+      .highlight .vi {
+        color: #ffffff;
+      }
+
+      .highlight .nv,
+      .highlight .vm {
+        color: #ffffff;
+      }
+
+      .highlight .w {
+        color: #ffffff;
+      }
+
+      .highlight {
+        color: #ffffff;
+      }
+
+      .highlight .n,
+      .highlight .py,
+      .highlight .nx {
+        color: #ffffff;
+      }
+
+      .highlight .nl {
+        color: #f92672;
+      }
+
+      .highlight .ow {
+        color: #f92672;
+      }
+
+      .highlight .nt {
+        color: #f92672;
+      }
+
+      .highlight .k,
+      .highlight .kv {
+        color: #f92672;
+      }
+
+      .highlight .kn {
+        color: #f92672;
+      }
+
+      .highlight .kp {
+        color: #f92672;
+      }
+
+      .highlight .o {
+        color: #f92672;
+      }
+    </style>
+    <style media="print">
+      * {
+        -webkit-transition: none !important;
+        transition: none !important;
+      }
+
+      .highlight table td {
+        padding: 5px;
+      }
+
+      .highlight table pre {
+        margin: 0;
+      }
+
+      .highlight,
+      .highlight .w {
+        color: #586e75;
+      }
+
+      .highlight .err {
+        color: #002b36;
+        background-color: #dc322f;
+      }
+
+      .highlight .c,
+      .highlight .ch,
+      .highlight .cd,
+      .highlight .cm,
+      .highlight .cpf,
+      .highlight .c1,
+      .highlight .cs {
+        color: #657b83;
+      }
+
+      .highlight .cp {
+        color: #b58900;
+      }
+
+      .highlight .nt {
+        color: #b58900;
+      }
+
+      .highlight .o,
+      .highlight .ow {
+        color: #93a1a1;
+      }
+
+      .highlight .p,
+      .highlight .pi {
+        color: #93a1a1;
+      }
+
+      .highlight .gi {
+        color: #859900;
+      }
+
+      .highlight .gd {
+        color: #dc322f;
+      }
+
+      .highlight .gh {
+        color: #268bd2;
+        background-color: #002b36;
+        font-weight: bold;
+      }
+
+      .highlight .k,
+      .highlight .kn,
+      .highlight .kp,
+      .highlight .kr,
+      .highlight .kv {
+        color: #6c71c4;
+      }
+
+      .highlight .kc {
+        color: #cb4b16;
+      }
+
+      .highlight .kt {
+        color: #cb4b16;
+      }
+
+      .highlight .kd {
+        color: #cb4b16;
+      }
+
+      .highlight .s,
+      .highlight .sb,
+      .highlight .sc,
+      .highlight .dl,
+      .highlight .sd,
+      .highlight .s2,
+      .highlight .sh,
+      .highlight .sx,
+      .highlight .s1 {
+        color: #859900;
+      }
+
+      .highlight .sa {
+        color: #6c71c4;
+      }
+
+      .highlight .sr {
+        color: #2aa198;
+      }
+
+      .highlight .si {
+        color: #d33682;
+      }
+
+      .highlight .se {
+        color: #d33682;
+      }
+
+      .highlight .nn {
+        color: #b58900;
+      }
+
+      .highlight .nc {
+        color: #b58900;
+      }
+
+      .highlight .no {
+        color: #b58900;
+      }
+
+      .highlight .na {
+        color: #268bd2;
+      }
+
+      .highlight .m,
+      .highlight .mb,
+      .highlight .mf,
+      .highlight .mh,
+      .highlight .mi,
+      .highlight .il,
+      .highlight .mo,
+      .highlight .mx {
+        color: #859900;
+      }
+
+      .highlight .ss {
+        color: #859900;
+      }
+    </style>
+    <link href="stylesheets/screen-c9d8fa83.css" rel="stylesheet" media="screen" />
+    <link href="stylesheets/print-953e3353.css" rel="stylesheet" media="print" />
+    <script src="javascripts/all-a9fde460.js"></script>
+
+    <script>
+      $(function () {
+        setupCodeCopy();
+      });
+    </script>
+  </head>
+
+  <body class="index" data-languages='["shell"]'>
+    <a href="#" id="nav-button">
+      <span>
+        NAV
+        <img src="images/navbar-cad8cdcb.png" alt="" />
+      </span>
+    </a>
+    <div class="toc-wrapper">
+      <img src="images/logo-b8250678.png" class="logo" alt="" />
+      <div class="lang-selector">
+        <a href="#" data-language-name="shell">shell</a>
+      </div>
+      <div class="search">
+        <input type="text" class="search" id="input-search" placeholder="Search" />
+      </div>
+      <ul class="search-results"></ul>
+      <ul id="toc" class="toc-list-h1">
+        <li>
+          <a href="#introduction" class="toc-h1 toc-link" data-title="Introduction">Introduction</a>
+        </li>
+        <li>
+          <a href="#authentication" class="toc-h1 toc-link" data-title="Authentication">Authentication</a>
+        </li>
+        <li>
+          <a href="#0weebs-api" class="toc-h1 toc-link" data-title="0weebs API">0weebs API</a>
+          <ul class="toc-list-h2">
+            <li>
+              <a href="#get-commands" class="toc-h2 toc-link" data-title="Get Commands">Get Commands</a>
+            </li>
+            <li>
+              <a href="#get-channels" class="toc-h2 toc-link" data-title="Get Channels">Get Channels</a>
+            </li>
+            <li>
+              <a href="#get-emotes-list" class="toc-h2 toc-link" data-title="Get emotes list">Get emotes list</a>
+            </li>
+            <li>
+              <a href="#ban-check" class="toc-h2 toc-link" data-title="Ban check">Ban check</a>
+            </li>
+            <li>
+              <a href="#get-settings" class="toc-h2 toc-link" data-title="Get Settings">Get Settings</a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+      <ul class="toc-footer">
+        <li><a href="https://github.com/slatedocs/slate">Documentation Powered by Slate</a></li>
+      </ul>
+    </div>
+    <div class="page-wrapper">
+      <div class="dark-box"></div>
+      <div class="content">
+        <h1 id="introduction">Introduction</h1>
+        <p>This is a lidl api that lets you get some data from 0weebs :)</p>
+        <h1 id="authentication">Authentication</h1>
+        <p>No authentication is requierd for now :)</p>
+        <h1 id="0weebs-api">0weebs API</h1>
+        <h2 id="get-commands">Get Commands</h2>
+        <div class="highlight">
+          <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://zeroapi.chat.vote/commands"</span>
+</code></pre>
+        </div>
+        <blockquote>
+          <p>The above command returns JSON structured like this:</p>
+        </blockquote>
+        <div class="highlight">
+          <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"join"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"aliases"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Adds the bot to your channel. only works in the &lt;a href=</span><span class="se">\"</span><span class="s2">https://twitch.tv/0weebs</span><span class="se">\"</span><span class="s2">&gt;bot's chat.&lt;/a&gt;"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cd"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"whisperable"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cat"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"leave"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"aliases"</span><span class="p">:</span><span class="w"> </span><span class="p">[],</span><span class="w">
+    </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Removes the bot from your channel."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cd"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">2</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"whisperable"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cat"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+  </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">"bot"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"aliases"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"about"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"help"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"commands"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"owner"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"contact"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"0weebs"</span><span class="w">
+    </span><span class="p">],</span><span class="w">
+    </span><span class="nl">"enabled"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"desc"</span><span class="p">:</span><span class="w"> </span><span class="s2">"Shows some info about the bot. Different aliases have different responses."</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cd"</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lvl"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"whisperable"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cat"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="w">
+  </span><span class="p">},</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+        </div>
+        <blockquote>
+          <p>Showing first 3 results only.</p>
+        </blockquote>
+
+        <p>This endpoint retrieves a detailed list of all commands.</p>
+        <h3 id="http-request">HTTP Request</h3>
+        <p><code>GET https://zeroapi.chat.vote/commands</code></p>
+        <h2 id="get-channels">Get Channels</h2>
+        <div class="highlight">
+          <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://zeroapi.chat.vote/channels"</span>
+</code></pre>
+        </div>
+        <blockquote>
+          <p>The above command returns JSON structured like this:</p>
+        </blockquote>
+        <div class="highlight">
+          <pre class="highlight json tab-json"><code><span class="p">[</span><span class="w">
+  </span><span class="s2">"0kayga"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"0weebs"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"alex1sssssssssssssssss"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"anelexd420"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"badoge"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"behindpro"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"jeffboys123"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"jeo315"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"kawanpls"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"m0nteeeeeeeee"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"nam______________________"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"nord_011"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"olajvr"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pieladder_"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"pilzkman"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"psevdxnym"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"senderak"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"teischente"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"tekate___"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"victorbaya"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"wtfdissht3"</span><span class="p">,</span><span class="w">
+  </span><span class="s2">"xoosd"</span><span class="w">
+</span><span class="p">]</span><span class="w">
+</span></code></pre>
+        </div>
+        <p>Get a list of all channels that 0weebs is connected to.</p>
+        <h3 id="http-request-2">HTTP Request</h3>
+        <p><code>GET https://zeroapi.chat.vote/channels</code></p>
+        <h2 id="get-emotes-list">Get emotes list</h2>
+        <div class="highlight">
+          <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://zeroapi.chat.vote/list"</span>
+</code></pre>
+        </div>
+        <blockquote>
+          <p>The above command returns JSON structured like this:</p>
+        </blockquote>
+        <div class="highlight">
+          <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"2020Rivalry"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"AYAYA"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"HungryPaimon"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Ir0n"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"KonCha"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Lewd"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"LuvBlondeR"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"PinkMercy"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"PunOko"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"Silver"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"TPFufun"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"TPcrunchyroll"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"TearGlove"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"TehePelo"</span><span class="p">,</span><span class="w">
+    </span><span class="err">...</span><span class="w">
+     </span><span class="p">]</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+        </div>
+        <div class="highlight">
+          <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://zeroapi.chat.vote/list?channel=badoge"</span>
+</code></pre>
+        </div>
+        <blockquote>
+          <p>The above command returns JSON structured like this:</p>
+        </blockquote>
+        <div class="highlight">
+          <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"list"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+    </span><span class="s2">"forsen"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"xqc"</span><span class="p">,</span><span class="w">
+    </span><span class="s2">"TriHard"</span><span class="w">
+  </span><span class="p">],</span><span class="w">
+  </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"badoge"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+        </div>
+        <p>
+          Get a list of all emotes/prefixes that the bot looks for by default in all channels. You can also lookup the custom banphrases in a specific channel by adding the
+          &quot;channel&quot; parameter to your request.
+        </p>
+        <h3 id="http-request-3">HTTP Request</h3>
+        <p><code>GET https://zeroapi.chat.vote/list</code></p>
+        <h3 id="url-parameters">URL Parameters</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>channel</td>
+              <td>(optional) The channel that you want to lookup.</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="ban-check">Ban check</h2>
+        <div class="highlight">
+          <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://zeroapi.chat.vote/bancheck?message=VoHiYo%20any%20weebs"</span>
+</code></pre>
+        </div>
+        <blockquote>
+          <p>The above command returns JSON structured like this:</p>
+        </blockquote>
+        <div class="highlight">
+          <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"VoHiYo any weebs"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"banned"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+        </div>
+        <div class="highlight">
+          <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://zeroapi.chat.vote/bancheck?message=weebs%20out%20NaM"</span>
+</code></pre>
+        </div>
+        <blockquote>
+          <p>The above command returns JSON structured like this:</p>
+        </blockquote>
+        <div class="highlight">
+          <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"weebs out NaM"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"banned"</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+        </div>
+        <div class="highlight">
+          <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://zeroapi.chat.vote/bancheck?message=any%20bajs%20forsenE&amp;channel=badoge"</span>
+</code></pre>
+        </div>
+        <blockquote>
+          <p>The above command returns JSON structured like this:</p>
+        </blockquote>
+        <div class="highlight">
+          <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"message"</span><span class="p">:</span><span class="w"> </span><span class="s2">"any bajs forsenE"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"banned"</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"badoge"</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+        </div>
+        <p>Checks if a message is safe, you can specify a channel to include custom banphrases.</p>
+        <h3 id="http-request-4">HTTP Request</h3>
+        <p><code>GET https://zeroapi.chat.vote/bancheck</code></p>
+        <h3 id="url-parameters-2">URL Parameters</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>message</td>
+              <td>The message that you want to check. URL-encoded</td>
+            </tr>
+            <tr>
+              <td>channel</td>
+              <td>(optional) The channel that you want to check the message in.</td>
+            </tr>
+          </tbody>
+        </table>
+        <h2 id="get-settings">Get Settings</h2>
+        <div class="highlight">
+          <pre class="highlight shell tab-shell"><code>curl <span class="s2">"https://zeroapi.chat.vote/settings?channel=badoge"</span>
+</code></pre>
+        </div>
+        <blockquote>
+          <p>The above command returns JSON structured like this:</p>
+        </blockquote>
+        <div class="highlight">
+          <pre class="highlight json tab-json"><code><span class="p">{</span><span class="w">
+  </span><span class="nl">"channel"</span><span class="p">:</span><span class="w"> </span><span class="s2">"badoge"</span><span class="p">,</span><span class="w">
+  </span><span class="nl">"settings"</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w">
+    </span><span class="nl">"_id"</span><span class="p">:</span><span class="w"> </span><span class="mi">59616430</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"username"</span><span class="p">:</span><span class="w"> </span><span class="s2">"badoge"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"lastuse"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2021-07-29T10:13:16.441Z"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"weebs"</span><span class="p">:</span><span class="w"> </span><span class="mi">0</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"uses"</span><span class="p">:</span><span class="w"> </span><span class="mi">3</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"cd"</span><span class="p">:</span><span class="w"> </span><span class="mi">5</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"length"</span><span class="p">:</span><span class="w"> </span><span class="mi">1</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"reason"</span><span class="p">:</span><span class="w"> </span><span class="s2">"weebs DansGame"</span><span class="p">,</span><span class="w">
+    </span><span class="nl">"extra"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+      </span><span class="s2">"TriHard"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"forsen"</span><span class="p">,</span><span class="w">
+      </span><span class="s2">"xqc"</span><span class="w">
+    </span><span class="p">]</span><span class="w">
+  </span><span class="p">}</span><span class="w">
+</span><span class="p">}</span><span class="w">
+</span></code></pre>
+        </div>
+        <p>Retrieve a channel&#39;s 0weebs settings.</p>
+        <h3 id="http-request-5">HTTP Request</h3>
+        <p><code>GET https://zeroapi.chat.vote/settings?channel=&lt;channel&gt;</code></p>
+        <h3 id="url-parameters-3">URL Parameters</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>Parameter</th>
+              <th>Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>channel</td>
+              <td>The Twitch channel that you want to lookup.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="dark-box">
+        <div class="lang-selector">
+          <a href="#" data-language-name="shell">shell</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-H43YN7FSSP"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-H43YN7FSSP");
+    </script>
+  </body>
+</html>
