@@ -52,9 +52,6 @@
             <li class="nav-item">
               <a class="nav-link" href="/api/" target="_blank" rel="noopener noreferrer"><i class="material-icons notranslate">api</i>API</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/settings.html"><i class="material-icons notranslate">settings</i>Settings</a>
-            </li>
           </ul>
         </div>
       </div>
@@ -73,7 +70,6 @@
     <script>
       let aliases = {
         commands: ["commands", "command"],
-        settings: ["settings", "profile", "setting"],
       };
       let path = window.location.pathname.replace("/", "").toLowerCase();
       for (let key in aliases) {
