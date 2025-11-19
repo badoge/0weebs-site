@@ -279,17 +279,15 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script>
       window.onload = async function () {
-        let requestOptions = {
-          method: "GET",
-          redirect: "follow",
-        };
-        let response = await fetch(`https://zeroapi.chat.vote/stats`, requestOptions);
+        let response = await fetch(`https://zeroapi.chat.vote/stats`);
         let stats = await response.json();
-        document.getElementById("botstats").innerHTML = `Connected to  ${stats.stats.channels} channels<br>
-        ${stats.stats.list.replace("suffixes", "<br>suffixes").replace("emotes", "<br>emotes")}<br>
-        RAM usage: ${stats.stats.ramUsage}MB<br>
-        Bot uptime: ${stats.stats.botUptime}<br>
-        Server uptime: ${stats.stats.serverUptime}<br>`;
+        document.getElementById("botstats").innerHTML = `Connected to  ${stats.channels} channels<br>
+        Prefixes: ${stats.list.prefixes.toLocaleString()}<br>
+        Suffixes: ${stats.list.suffixes.toLocaleString()}<br>
+        Emotes: ${stats.list.emotes.toLocaleString()}<br>
+        RAM usage: ${stats.ramUsage}MB<br>
+        Bot uptime: ${stats.botUptime}<br>
+        Server uptime: ${stats.serverUptime}<br>`;
       };
     </script>
   </body>
