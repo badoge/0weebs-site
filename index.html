@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" prefix="og: https://ogp.me/ns#" data-bs-theme="dark">
   <head>
     <meta charset="utf-8" />
@@ -48,9 +48,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link" href="/commands.html"><i class="material-icons notranslate">smart_toy</i>Commands</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/api/" target="_blank" rel="noopener noreferrer"><i class="material-icons notranslate">api</i>API</a>
             </li>
           </ul>
         </div>
@@ -144,7 +141,10 @@
                     <li class="list-group-item">
                       Which emotes are banned?
                       <ul>
-                        <li>You can check the list of banned emotes using the <a href="https://zeroapi.chat.vote/list" target="_blank" rel="noopener noreferrer">API</a></li>
+                        <li>
+                          <s>You can check the list of banned emotes using the <a href="https://helper.donk.workers.dev/zero/list" target="_blank" rel="noopener noreferrer">API</a></s> API
+                          temporarily shutdown :)
+                        </li>
                         <ul>
                           <li>The list consists of emote prefixes mostly and not individual emotes so it is not indicative of the total number of banned emotes.</li>
                         </ul>
@@ -155,7 +155,7 @@
                       How do you find these emotes?
                       <ul>
                         <li>
-                          Most emotes are subbmited by the major contributor
+                          Most emotes are submitted by the major contributor
                           <a href="https://www.twitch.tv/viology" target="_blank" rel="noopener noreferrer">viology</a>
                         </li>
                         <li>Users can report emotes using ==suggest</li>
@@ -279,7 +279,7 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script>
       window.onload = async function () {
-        let response = await fetch(`https://zeroapi.chat.vote/stats`);
+        let response = await fetch(`https://helper.donk.workers.dev/zero/stats`);
         let stats = await response.json();
         document.getElementById("botstats").innerHTML = `Connected to  ${stats.channels} channels<br>
         Prefixes: ${stats.list.prefixes.toLocaleString()}<br>

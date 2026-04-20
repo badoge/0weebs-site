@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" prefix="og: https://ogp.me/ns#" data-bs-theme="dark">
   <head>
     <meta charset="utf-8" />
@@ -43,9 +43,6 @@
             </li>
             <li class="nav-item">
               <a class="nav-link active" aria-current="page" href="/commands.html"><i class="material-icons notranslate">smart_toy</i>Commands</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/api/" target="_blank" rel="noopener noreferrer"><i class="material-icons notranslate">api</i>API</a>
             </li>
           </ul>
         </div>
@@ -136,7 +133,7 @@
         });
 
         try {
-          let response = await fetch(`https://zeroapi.chat.vote/commands`);
+          let response = await fetch(`https://helper.donk.workers.dev/zero/commands`);
           let commands = await response.json();
           for (let i = 0; i < commands.length; i++) {
             let aliases = commands[i].aliases.map((el) => "==" + el).join(", ");
