@@ -142,7 +142,7 @@
                       Which emotes are banned?
                       <ul>
                         <li>
-                          <s>You can check the list of banned emotes using the <a href="https://helper.donk.workers.dev/zero/list" target="_blank" rel="noopener noreferrer">API</a></s> API
+                          <s>You can check the list of banned emotes using the <a href="https://api.zero.alienpls.com/list" target="_blank" rel="noopener noreferrer">API</a></s> API
                           temporarily shutdown :)
                         </li>
                         <ul>
@@ -279,7 +279,7 @@
     <script src="/js/bootstrap.bundle.min.js"></script>
     <script>
       window.onload = async function () {
-        let response = await fetch(`https://helper.donk.workers.dev/zero/stats`);
+        let response = await fetch(`https://api.zero.alienpls.com/stats`);
         let stats = await response.json();
         document.getElementById("botstats").innerHTML = `Connected to  ${stats.channels} channels<br>
         Prefixes: ${stats.list.prefixes.toLocaleString()}<br>
