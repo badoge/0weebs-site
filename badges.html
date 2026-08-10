@@ -140,6 +140,10 @@
           let banLists = await response2.json();
 
           if (!badges || !banLists) {
+            document.getElementById("nonBanned").innerHTML = "Something went wrong :(";
+            document.getElementById("banned").innerHTML = "Something went wrong :(";
+            document.getElementById("bannedCount").innerHTML = `(?)`;
+            document.getElementById("nonBannedCount").innerHTML = `(?)`;
             return;
           }
 
@@ -169,6 +173,10 @@
             );
           }
         } catch (error) {
+          document.getElementById("nonBanned").innerHTML = "Something went wrong :(";
+          document.getElementById("banned").innerHTML = "Something went wrong :(";
+          document.getElementById("bannedCount").innerHTML = `(?)`;
+          document.getElementById("nonBannedCount").innerHTML = `(?)`;
           console.log(error);
         }
       };
