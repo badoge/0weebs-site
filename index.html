@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <meta
       name="description"
-      content="0weebs is a Twitch chat bot that will timeout anyone that posts a weeb emote in your chat. You'll have 0 weebs in your chat after you add this bot :)"
+      content="0weebs is a Twitch chat bot that will timeout anyone that uses a weeb emote or badge in your chat. You'll have 0 weebs in your chat after you add this bot :)"
     />
     <meta name="keywords" content="twitch, chat, bot, 0weebs" />
     <meta property="og:title" content="About | 0weebs" />
@@ -16,7 +16,7 @@
     <meta property="og:locale" content="en_US" />
     <meta
       property="og:description"
-      content="0weebs is a Twitch chat bot that will timeout anyone that posts a weeb emote in your chat. You'll have 0 weebs in your chat after you add this bot :)"
+      content="0weebs is a Twitch chat bot that will timeout anyone that uses a weeb emote or badge in your chat. You'll have 0 weebs in your chat after you add this bot :)"
     />
 
     <link rel="apple-touch-icon" sizes="152x152" href="/pics/icon/apple-touch-icon.png" />
@@ -49,6 +49,14 @@
             <li class="nav-item">
               <a class="nav-link" href="/commands.html"><i class="material-icons notranslate">smart_toy</i>Commands</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/banlist.html"><i class="material-icons notranslate">gavel</i>Ban list</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/badges.html"><i class="material-icons notranslate">crop_square</i>Badges</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -65,8 +73,8 @@
                 <div class="card-body">
                   <h5 class="card-title">About</h5>
                   <p class="card-text">
-                    This is a Twitch chat bot that will timeout anyone that posts a weeb emote in your chat. <img src="/pics/nam.png" alt="nam" height="30" /><br />You'll have 0 weebs in
-                    your chat after you add this bot <img src="/pics/4head.png" alt="4head" height="30" />
+                    0weebs is a Twitch chat bot that will timeout anyone that uses a weeb emote or badge in your chat. <img src="/pics/nam.png" alt="nam" height="30" /><br />You'll have 0
+                    weebs in your chat after you add this bot <img src="/pics/4head.png" alt="4head" height="30" />
                   </p>
                 </div>
               </div>
@@ -139,15 +147,11 @@
                     </li>
 
                     <li class="list-group-item">
-                      Which emotes are banned?
+                      Which emotes and badges are banned?
                       <ul>
                         <li>
-                          <s>You can check the list of banned emotes using the <a href="https://api.zero.alienpls.com/list" target="_blank" rel="noopener noreferrer">API</a></s> API
-                          temporarily shutdown :)
+                          You can check the list of banned emotes and badges on the <a href="/banlist.html"><i class="material-icons notranslate">gavel</i>Ban list</a> page
                         </li>
-                        <ul>
-                          <li>The list consists of emote prefixes mostly and not individual emotes so it is not indicative of the total number of banned emotes.</li>
-                        </ul>
                       </ul>
                     </li>
 
@@ -158,7 +162,7 @@
                           Most emotes are submitted by the major contributor
                           <a href="https://www.twitch.tv/viology" target="_blank" rel="noopener noreferrer">viology</a>
                         </li>
-                        <li>Users can report emotes using ==suggest</li>
+                        <li>Users can report emotes using the <kbd>==suggest</kbd> command</li>
                       </ul>
                     </li>
 
@@ -198,6 +202,24 @@
                           in any way
                         </li>
                       </ul>
+                      <ul>
+                        <li>
+                          Check the
+                          <a href="/banlist.html"><i class="material-icons notranslate">gavel</i>Ban list</a>
+                          page for more info
+                        </li>
+                      </ul>
+                    </li>
+
+                    <li class="list-group-item">
+                      How can I ban a badge?
+                      <ul>
+                        <li>
+                          Check the
+                          <a href="/badges.html"><i class="material-icons notranslate">crop_square</i>Badges</a>
+                          page for more info about banning badges
+                        </li>
+                      </ul>
                     </li>
 
                     <li class="list-group-item">
@@ -211,8 +233,8 @@
                       How can I change the timeout length?
                       <ul>
                         <li>
-                          You can use the <kbd>==length</kbd> command to change the timeout length, range is from 0 to 1209600. <br />0 will just delete the message without a timeout.
-                          <br />You can also use <kbd>==length perma</kbd> to permanently ban anyone that uses a banned emote.
+                          You can use the <kbd>==length [seconds]</kbd> command to change the timeout length, range is from 0 to 1209600 (2 weeks). <br />Setting it to 0 will just delete the
+                          message without timing out the chatter. <br />You can also use <kbd>==length perma</kbd> to permanently ban anyone that uses a banned emote or badge.
                         </li>
                       </ul>
                     </li>

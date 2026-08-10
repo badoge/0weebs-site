@@ -49,6 +49,14 @@
             <li class="nav-item">
               <a class="nav-link" href="/commands.html"><i class="material-icons notranslate">smart_toy</i>Commands</a>
             </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/banlist.html"><i class="material-icons notranslate">gavel</i>Ban list</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/badges.html"><i class="material-icons notranslate">crop_square</i>Badges</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -67,6 +75,8 @@
     <script>
       let aliases = {
         commands: ["commands", "command"],
+        banlist: ["banlist", "banlists", "list", "api", "ban"],
+        badges: ["badges", "badge"],
       };
       let path = window.location.pathname.replace("/", "").toLowerCase();
       for (let key in aliases) {

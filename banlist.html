@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en" prefix="og: https://ogp.me/ns#" data-bs-theme="dark">
+  <head>
+    <meta charset="utf-8" />
+    <title>Ban list | 0weebs</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="A list of all prefixes and suffixes and emotes and badges that are banned by the 0weebs bot" />
+    <meta name="keywords" content="twitch, chat, bot, 0weebs" />
+    <meta property="og:title" content="an li | 0weebs" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://zero.alienpls.com/banlist" />
+    <meta property="og:image" content="https://zero.alienpls.com/pics/nam.png" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:description" content="A list of all prefixes and suffixes and emotes and badges that are banned by the 0weebs bot" />
+
+    <link rel="apple-touch-icon" sizes="152x152" href="/pics/icon/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/pics/icon/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/pics/icon/favicon-16x16.png" />
+    <link rel="manifest" href="/pics/icon/site.webmanifest" />
+    <link rel="mask-icon" href="/pics/icon/safari-pinned-tab.svg" color="#ffc40d" />
+    <link rel="shortcut icon" href="/pics/icon/favicon.ico" />
+    <meta name="msapplication-TileColor" content="#ff62bd" />
+    <meta name="msapplication-config" content="/pics/icon/browserconfig.xml" />
+    <meta name="theme-color" content="#ffffff" />
+
+    <link rel="stylesheet" href="/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/css/datatables.min.css" />
+    <link rel="stylesheet" href="/css/icons.css" />
+    <link rel="stylesheet" href="/css/0weebs.min.css" />
+  </head>
+
+  <style>
+    .accordion-body {
+      max-height: 50vh;
+      overflow-y: auto;
+    }
+  </style>
+
+  <body>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary mb-2">
+      <div class="container-fluid">
+        <a class="navbar-brand notranslate" href="#"><img src="/pics/nam.png" alt="nam" style="height: 30px; width: 30px" class="d-inline-block align-top" />0weebs</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" href="/"><i class="material-icons notranslate">info</i>About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/commands.html"><i class="material-icons notranslate">smart_toy</i>Commands</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="/banlist.html"><i class="material-icons notranslate">gavel</i>Ban list</a>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link" href="/badges.html"><i class="material-icons notranslate">crop_square</i>Badges</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row mt-5">
+        <div class="col-xl-3"></div>
+
+        <div class="col-xl-6">
+          <h1><i class="material-icons notranslate" style="font-size: 45px">gavel</i>Ban List</h1>
+          <div class="accordion mb-5" id="banListAccordion">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#prefixesCollapse" aria-expanded="false" aria-controls="prefixesCollapse">
+                  <div>Prefixes <span id="prefixCount">(Loading...)</span></div>
+                </button>
+              </h2>
+              <div id="prefixesCollapse" class="accordion-collapse collapse">
+                <div class="accordion-body" id="prefixes">
+                  <p class="placeholder-glow">
+                    <span class="placeholder col-12"></span>
+                  </p>
+                  <p class="placeholder-glow">
+                    <span class="placeholder col-12"></span>
+                  </p>
+                  <p class="placeholder-glow">
+                    <span class="placeholder col-12"></span>
+                  </p>
+                  <p class="placeholder-glow">
+                    <span class="placeholder col-12"></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#suffixesCollapse" aria-expanded="false" aria-controls="suffixesCollapse">
+                  <div>Suffixes <span id="suffixCount">(Loading...)</span></div>
+                </button>
+              </h2>
+              <div id="suffixesCollapse" class="accordion-collapse collapse">
+                <div class="accordion-body" id="suffixes">
+                  <p class="placeholder-glow">
+                    <span class="placeholder col-12"></span>
+                  </p>
+                  <p class="placeholder-glow">
+                    <span class="placeholder col-12"></span>
+                  </p>
+                  <p class="placeholder-glow">
+                    <span class="placeholder col-12"></span>
+                  </p>
+                  <p class="placeholder-glow">
+                    <span class="placeholder col-12"></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#emotesCollapse" aria-expanded="false" aria-controls="emotesCollapse">
+                  <div>Emotes <span id="emoteCount">(Loading...)</span></div>
+                </button>
+              </h2>
+              <div id="emotesCollapse" class="accordion-collapse collapse">
+                <div class="accordion-body" id="emotes">
+                  <p class="placeholder-glow">
+                    <span class="placeholder col-12"></span>
+                  </p>
+                  <p class="placeholder-glow">
+                    <span class="placeholder col-12"></span>
+                  </p>
+                  <p class="placeholder-glow">
+                    <span class="placeholder col-12"></span>
+                  </p>
+                  <p class="placeholder-glow">
+                    <span class="placeholder col-12"></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#badgesCollapse" aria-expanded="false" aria-controls="badgesCollapse">
+                  <div>Badges <span id="badgeCount">(Loading...)</span></div>
+                </button>
+              </h2>
+              <div id="badgesCollapse" class="accordion-collapse collapse">
+                <div class="accordion-body" id="badges">
+                  <p class="placeholder-glow">
+                    <span class="placeholder col-12"></span>
+                  </p>
+                  <p class="placeholder-glow">
+                    <span class="placeholder col-12"></span>
+                  </p>
+                  <p class="placeholder-glow">
+                    <span class="placeholder col-12"></span>
+                  </p>
+                  <p class="placeholder-glow">
+                    <span class="placeholder col-12"></span>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <div style="width: 100%">
+            <h1><i class="material-icons notranslate" style="font-size: 45px">info</i>About the list</h1>
+
+            <p class="text-center">
+              The bot bans emotes mostly based on the emote prefix, but a small amount of emotes are individually banned because they are from channels that only have a couple weeb emotes.
+              Some emotes get caught by the suffix ban list also.<br />
+              Each channel has a unique prefix for all of its emotes. Streamers then set a name for each emote they upload, this emote name is referred to as a suffix on the bot.<br />
+              The list above is for the globally banned emotes, you can opt out from using this list and use your own custom list only by using the <kbd>==mainlist</kbd> command.<br />
+              To make a custom ban list use the <kbd>==addprefix</kbd>, <kbd>==addsuffix</kbd> and <kbd>==addemote</kbd> commands. Check the About page or the Commands page for more info.
+              Also check the Badges page for info about custom badge ban lists.<br /><br />
+              The diagram below can be helpful to understand the terminology.<br />
+              Banning the prefix "forsen" will make it so any emote with the same prefix will get banned. So the emotes "forsenDank" and "forsenE" will both get banned because they start
+              with the "forsen" prefix that you added to your custom list.<br />
+              Banning the suffix "Dank" will make the bot ban any emote that ends with "Dank". So in the example below, both "forsenDank" and "nymnDank" will get banned because they end with
+              the "Dank" suffix that you added to your custom suffix list.<br />
+              Adding an individual emote to the list will only ban that emote, and other emotes with the same prefix or suffix will be allowed.<br />
+              It is important to know that suffixes always start with an upper case letter or a number. So if you add a wrong suffix or prefix, it might make the bot mistakenly ban emotes,
+              or let some emotes that you wanted to ban through.
+              <br />
+              <img style="margin-block: auto" alt="emote terminology" src="/pics/dank.png" />
+            </p>
+          </div>
+        </div>
+
+        <div class="col-xl-3"></div>
+      </div>
+    </div>
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/datatables.min.js"></script>
+    <script>
+      window.onload = async function () {
+        try {
+          let response = await fetch(`https://api.zero.alienpls.com/list`);
+          let list = await response.json();
+          console.log(list);
+          if (list?.list?.prefixes && list?.list?.suffixes && list?.list?.emotes) {
+            document.getElementById("prefixCount").innerHTML = `(${list.list.prefixes.length.toLocaleString()})`;
+            document.getElementById("suffixCount").innerHTML = `(${list.list.suffixes.length.toLocaleString()})`;
+            document.getElementById("emoteCount").innerHTML = `(${list.list.emotes.length.toLocaleString()})`;
+            document.getElementById("badgeCount").innerHTML = `(${list.list.badges.length.toLocaleString()})`;
+
+            document.getElementById("prefixes").innerHTML = list.list.prefixes.join(" ");
+            document.getElementById("suffixes").innerHTML = list.list.suffixes.join(" ");
+            document.getElementById("emotes").innerHTML = list.list.emotes.join(" ");
+            document.getElementById("badges").innerHTML = list.list.badges.join(" ");
+          } else {
+            document.getElementById("prefixCount").innerHTML = "Something went wrong :(";
+            document.getElementById("suffixCount").innerHTML = "Something went wrong :(";
+            document.getElementById("emoteCount").innerHTML = "Something went wrong :(";
+            document.getElementById("badgeCount").innerHTML = "Something went wrong :(";
+
+            document.getElementById("prefixes").innerHTML = "Something went wrong :(";
+            document.getElementById("suffixes").innerHTML = "Something went wrong :(";
+            document.getElementById("emotes").innerHTML = "Something went wrong :(";
+            document.getElementById("badges").innerHTML = "Something went wrong :(";
+          }
+        } catch (error) {
+          document.getElementById("prefixCount").innerHTML = "Something went wrong :(";
+          document.getElementById("suffixCount").innerHTML = "Something went wrong :(";
+          document.getElementById("emoteCount").innerHTML = "Something went wrong :(";
+          document.getElementById("badgeCount").innerHTML = "Something went wrong :(";
+
+          document.getElementById("prefixes").innerHTML = "Something went wrong :(";
+          document.getElementById("suffixes").innerHTML = "Something went wrong :(";
+          document.getElementById("emotes").innerHTML = "Something went wrong :(";
+          document.getElementById("badges").innerHTML = "Something went wrong :(";
+          console.log(error);
+        }
+      };
+    </script>
+  </body>
+</html>
